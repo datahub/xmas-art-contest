@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title> | Journal Sentinel - jsonline.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://projects.jsonline.com/shared/css/font.futura-today.css" type="text/css" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+    <meta name="description" content="">
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@journalsentinel">
+    <meta name="twitter:creator" content="@journalsentinel">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+
+</head>
+<body>
+
+    <script src="http://projects.jsonline.com/shared/header/v2/header.js"></script>
+    <ul class="lightrope">
+        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+    </ul>
+
+    <div class="container">
+		<div class="mjs-inline-gallery">
+		{% for image in images %}
+			<div class="mjs-inline-item mjs-image-{% if image.orientation == 'landscape' %}horizontal{% else %}vertical{% endif %}">
+				<figure class="mjs-image-wrapper">
+					<img class="mjs-inline-image" {% if loop.first %}src="{{image.path}}"{% else %}src=""{% endif %} {% if not loop.first %}data-src="{{image.path}}"{% endif %} alt="{{image.desc|escape}}">
+					<figcaption class="mjs-inline-caption"><strong>{{image.desc}}</strong> by {{image.artist}}</figcaption>
+				</figure>
+			</div>
+			{% if loop.index % 3 == 0 %}
+			<div class="mjs-ad">
+				<div class="ad" id="btf-wide-{{loop.index}}"></div>
+			</div>
+			{% endif %}
+		{% endfor %}
+		</div>
+	</div>
+	<script src="js/lazyload.min.js"></script>
+	<script>ll.init();</script>
+
+	<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        var adSize = window.innerWidth < 730 ? [[320, 50]] : [[728, 90]];
+        var adName = window.innerWidth < 730 ? 'mobileweb-banner_bottom' : 'leaderboard_btf';
+        var adMobile = window.innerWidth < 730 ? '-mobile' : '';
+        googletag.cmd.push(function() {
+            // Global settings affecting all ad slots
+            var pubads = googletag.pubads();
+            pubads.enableSingleRequest();
+            //Setting global custom targeting that will be set on every ad slot
+            pubads.setTargeting('aam', ((decodeURIComponent(readCookie('aamusat')) || '').match(/[0-9]+/g) || []).join());
+            pubads.setTargeting('pageType', 'story-asset');
+            pubads.setTargeting('referrer', (document.referrer.match(/https?:\/\/[:\w\.-]+/) || ['N/A'])[0]);
+            pubads.setTargeting('topic', '');
+            pubads.setTargeting('url', document.location.href);
+            pubads.setTargeting('userguid', readCookie('gup_anonid') || 'N/A');
+            pubads.setTargeting('u', readCookie('aam_uuid') || '');
+            googletag.enableServices();
+            // Sets up the identified div as an ad slot with settings unique to that slot
+            {% for image in images %}{% if loop.index % 3 == 0 %}
+            googletag.defineSlot('/7103/wi-milwaukee'+adMobile+'-C1258/'+adName+'/entertainment', adSize, 'btf-wide-{{loop.index}}').addService(pubads);
+            {% endif %}{% endfor %}
+            // Triggers call to DFP to return an ad unit
+            {% for image in images %}{% if loop.index % 3 == 0 %}
+            googletag.display('btf-wide-{{loop.index}}');
+            {% endif %}{% endfor %}
+            function readCookie(name) {
+                var result = new RegExp('(?:^|; )' + encodeURIComponent(name) + '=([^;]*)').exec(document.cookie);
+                return result ? result[1] : null;
+            }
+        });
+    </script>
+	<script src="//tags.tiqcdn.com/utag/gci/jsonline-cobrand/prod/utag.js"></script>
+
+</body>
+</html>
