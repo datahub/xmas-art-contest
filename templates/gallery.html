@@ -2,22 +2,26 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
-    <title> | Journal Sentinel - jsonline.com</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>2016 Christmas Artwork | Journal Sentinel - jsonline.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://projects.jsonline.com/shared/css/font.futura-today.css" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
 
-    <meta name="description" content="">
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
+    <meta name="description" content="For the ninth year, the Journal Sentinel solicited work from Wisconsin artists for its front page on Christmas, in the place typically reserved for the top news of the day.">
+    <meta property="og:title" content="2016 Christmas Artwork">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://projects.jsonline.com/entertainment/2016/12/25/2016-christmas-artwork.html">
+    <meta property="og:image" content="http://projects.jsonline.com/entertainment/2016/12/25/media/Christmas%20Art___014___thumb.JPG">
+    <meta property="og:description" content="For the ninth year, the Journal Sentinel solicited work from Wisconsin artists for its front page on Christmas, in the place typically reserved for the top news of the day.">
+    <meta property="og:site_name" content="JSOnline.com">
+    <meta property="fb:app_id" content="227386193957280">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@journalsentinel">
     <meta name="twitter:creator" content="@journalsentinel">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="">
+    <meta name="twitter:title" content="2016 Christmas Artwork">
+    <meta name="twitter:description" content="For the ninth year, the Journal Sentinel solicited work from Wisconsin artists for its front page on Christmas, in the place typically reserved for the top news of the day.">
+    <meta name="twitter:image" content="http://projects.jsonline.com/entertainment/2016/12/25/media/Christmas%20Art___014___thumb.JPG">
 
 </head>
 <body>
@@ -26,8 +30,13 @@
     <ul class="lightrope">
         <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
     </ul>
-
     <div class="container">
+	    <h1 class="mjs-headline">2016 Christmas Artwork</h1>
+        <p class="mjs-description">
+        	For the ninth year, the Journal Sentinel solicited work from Wisconsin artists for its front page on Christmas, in the place typically reserved for the top news of the day.
+        	<br><br>
+        	Check back on Christmas morning when this year's winner is announced.
+        </p>
 		<div class="mjs-inline-gallery">
 		{% for image in images %}
 			<div class="mjs-inline-item mjs-image-{% if image.orientation == 'landscape' %}horizontal{% else %}vertical{% endif %}">
@@ -46,6 +55,8 @@
 	</div>
 	<script src="js/lazyload.min.js"></script>
 	<script>ll.init();</script>
+
+	<script src="js/app.js"></script>
 
 	<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
     <script>
@@ -68,13 +79,19 @@
             pubads.setTargeting('u', readCookie('aam_uuid') || '');
             googletag.enableServices();
             // Sets up the identified div as an ad slot with settings unique to that slot
-            {% for image in images %}{% if loop.index % 3 == 0 %}
-            googletag.defineSlot('/7103/wi-milwaukee'+adMobile+'-C1258/'+adName+'/entertainment', adSize, 'btf-wide-{{loop.index}}').addService(pubads);
-            {% endif %}{% endfor %}
+            googletag.defineSlot('/7103/wi-milwaukee'+adMobile+'-C1258/'+adName+'/entertainment', adSize, 'btf-wide-14').addService(pubads);
+            googletag.defineSlot('/7103/wi-milwaukee'+adMobile+'-C1258/'+adName+'/entertainment', adSize, 'btf-wide-28').addService(pubads);
+            googletag.defineSlot('/7103/wi-milwaukee'+adMobile+'-C1258/'+adName+'/entertainment', adSize, 'btf-wide-42').addService(pubads);
+            googletag.defineSlot('/7103/wi-milwaukee'+adMobile+'-C1258/'+adName+'/entertainment', adSize, 'btf-wide-56').addService(pubads);
+            googletag.defineSlot('/7103/wi-milwaukee'+adMobile+'-C1258/'+adName+'/entertainment', adSize, 'btf-wide-70').addService(pubads);
+            googletag.defineSlot('/7103/wi-milwaukee'+adMobile+'-C1258/'+adName+'/entertainment', adSize, 'btf-wide-84').addService(pubads);
             // Triggers call to DFP to return an ad unit
-            {% for image in images %}{% if loop.index % 3 == 0 %}
-            googletag.display('btf-wide-{{loop.index}}');
-            {% endif %}{% endfor %}
+            googletag.display('btf-wide-14');
+            googletag.display('btf-wide-28');
+            googletag.display('btf-wide-42');
+            googletag.display('btf-wide-56');
+            googletag.display('btf-wide-70');
+            googletag.display('btf-wide-84');
             function readCookie(name) {
                 var result = new RegExp('(?:^|; )' + encodeURIComponent(name) + '=([^;]*)').exec(document.cookie);
                 return result ? result[1] : null;
