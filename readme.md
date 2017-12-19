@@ -1,4 +1,4 @@
-# 2016 Holiday Artwork Contest
+# Holiday Artwork Contest
 
 The artwork title and artist information should be stored in the metadata of the image.
 
@@ -7,3 +7,5 @@ The artwork title and artist information should be stored in the metadata of the
 2. Create a new virtual environment and install the packages via `requirements.txt`.
 3. Run `python generator.py` to build the `index.html` file.
 4. Copy the `dist` folder to the projects server.
+
+ - 2016: http://projects.jsonline.com/entertainment/2016/12/25/2016-christmas-artwork.html
