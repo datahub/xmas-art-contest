@@ -9,3 +9,4 @@ The artwork title and artist information should be stored in the metadata of the
 4. Copy the `dist` folder to the projects server.
 
  - 2016: http://projects.jsonline.com/entertainment/2016/12/25/2016-christmas-artwork.html
+ - 2017: https://projects.jsonline.com/entertainment/2017/12/21/2017-christmas-artwork.html
