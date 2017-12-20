@@ -1,138 +1,61 @@
-body {font-family: 'Futura Today', Arial ,serif; background: #050515; color: #fff;}
-strong, b, h1, h2, h3, h4, h5, h6 {font-family: 'Futura Today DemiBold', Arial ,serif;}
+body {font-family: 'Unify Sans', Tahoma, sans-serif; background: #050515; color: #fff; margin:0;}
 .container {margin: 20px auto; max-width: 1280px; width: 96%;}
-.mjs-headline {max-width: 700px; margin: 90px auto;font-size: 56px; text-align: center;}
-
+.mjs-headline {max-width: 700px; margin: 90px auto 45px auto;font-size: 56px; text-align: center;}
+.mjs-description {max-width: 700px; margin: 45px auto 90px auto; font-size: 16px; text-align: center; letter-spacing: 1px; line-height: 1.4;}
+.mjs-description a,
+.mjs-description a:visited,
+.mjs-description a:focus {color:#4ec4ff; text-decoration: none;}
+.mjs-description a:hover {color:#4ec4ff; text-decoration: underline;}
 .mjs-inline-gallery {margin: 0 auto; text-align: center;}
 .mjs-image-wrapper {margin: 0; padding: 0;}
 .mjs-inline-item {text-align: center;}
 .mjs-inline-image {display: block; margin: 0 auto;}
 .mjs-image-horizontal .mjs-inline-image {max-width: 1100px; width: 100%; height: auto;}
 .mjs-image-vertical .mjs-inline-image {max-height: 800px; width: auto; height: 100%;}
-.mjs-inline-caption {margin: 10px 0 80px 0; font-family: 'Futura Today Light', Arial ,serif; font-size: 20px; line-height: 1.4;}
+.mjs-inline-caption {margin: 10px 0 80px 0; font-size: 20px; line-height: 1.4;}
+.mjs-inline-caption strong {font-weight: 900;}
 .mjs-ad {width: 100%; max-width: 1024px; margin:0 auto 80px auto; padding: 20px 0; border-top: 1px solid #999; border-bottom: 1px solid #999; text-align: center;}
-
+.mjs-btt {position: fixed; right: 5px; bottom: 5px; line-height: 16px; font-size: 14px; vertical-align: middle; border: 1px solid #fff; padding: 5px 0px; border-radius: 5px; background: rgba(5,5,21,.5); text-align: center; opacity: 0; cursor: pointer; transition: opacity .5s ease-in-out; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+.mjs-btt-progress {padding: 0 5px;}
+.mjs-btt-button {border-top: 1px solid #fff; padding: 5px 5px 0 5px; margin-top: 5px;}
+.mjs-btt-arrow {height: 10px; width: auto; display: inline-block; margin-left: 3px;}
+#jsonline-footer .mjs-footer-related-link,
+#jsonline-footer .mjs-footer-related-link:focus,
+#jsonline-footer .mjs-footer-related-link:visited,
+#jsonline-footer .mjs-footer-related-link:hover {color:#fff !important; text-decoration:none !important;}
+.mjs-highlight {color: #FFCB4B;}
+.mjs-highlight strong:before {content:"Winner: ";}
+@media(min-width: 730px) {
+  nav.site-nav {position: absolute !important;}
+}
 @media(max-width: 730px) {
 	.mjs-headline { font-size: 36px; margin: 40px auto;}
-	.mjs-image-vertical .mjs-inline-image {width: 100%; height: auto; max-height: 500px;}
-	.mjs-inline-caption {margin: 10px 0 40px 0;}
+	.mjs-image-vertical .mjs-inline-image {width: 100%; height: auto;}
+	.mjs-inline-caption {margin: 10px 0 40px 0; font-size: 16px;}
 	.mjs-ad {padding: 10px 0; margin: 0 auto 40px auto;}
 }
-
-.lightrope {
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  position: fixed;
-  z-index: 1;
-  margin: -23px 0 0 -8px;
-  padding: 0;
-  pointer-events: none;
-  width: 100%;
-}
-.lightrope li {
-  position: relative;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-  width: 12px;
-  height: 28px;
-  border-radius: 50%;
-  margin: 20px;
-  display: inline-block;
-  background: #04bf20;
-  box-shadow: 0px 4.66667px 24px 3px #04bf20;
-  -webkit-animation-name: flash-1;
-          animation-name: flash-1;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-}
-.lightrope li:nth-child(2n+2) {
-  background: #ff0d4c;
-  box-shadow: 0px 4.66667px 24px 3px #ff0d4c;
-  -webkit-animation-name: flash-3;
-          animation-name: flash-3;
-  -webkit-animation-duration: 1.1s;
-          animation-duration: 1.1s;
-}
-.lightrope li:nth-child(odd) {
-  -webkit-animation-duration: 1.8s;
-          animation-duration: 1.8s;
-}
-.lightrope li:nth-child(3n+5) {
-  -webkit-animation-duration: 1.4s;
-          animation-duration: 1.4s;
-}
-.lightrope li:before {
-  content: "";
-  position: absolute;
-  background: #222;
-  width: 10px;
-  height: 9.33333px;
-  border-radius: 3px;
-  top: -4.66667px;
-  left: 1px;
-}
-.lightrope li:after {
-  content: "";
-  top: -14px;
-  left: 9px;
-  position: absolute;
-  width: 52px;
-  height: 18.66667px;
-  border-bottom: solid #222 2px;
-  border-radius: 50%;
-}
-.lightrope li:last-child:after {
-  content: none;
-}
-.lightrope li:first-child {
-  margin-left: -40px;
-}
-
+.lightrope {text-align: center; white-space: nowrap; overflow: hidden; position: relative; z-index: 1; margin: -16px 0 0 0px; padding: 0; pointer-events: none; width: 100%;}
+.lightrope li {position: relative; -webkit-animation-fill-mode: both; animation-fill-mode: both; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; list-style: none; margin: 0; padding: 0; display: block; width: 12px; height: 28px; border-radius: 50%; margin: 20px; display: inline-block; background: #04bf20; box-shadow: 0px 4.66667px 24px 3px #04bf20; -webkit-animation-name: flash-1; animation-name: flash-1; -webkit-animation-duration: 2s; animation-duration: 2s;}
+.lightrope li:nth-child(2n+2) {background: #ff0d4c; box-shadow: 0px 4.66667px 24px 3px #ff0d4c; -webkit-animation-name: flash-2; animation-name: flash-2; -webkit-animation-duration: 1.1s; animation-duration: 1.1s;}
+.lightrope li:nth-child(odd) {-webkit-animation-duration: 1.9s; animation-duration: 1.9s;}
+.lightrope li:nth-child(3n+5) {-webkit-animation-duration: 1.3s; animation-duration: 1.3s;}
+.lightrope li:before {content: ""; position: absolute; background: #222; width: 10px; height: 9.33333px; border-radius: 3px; top: -4.66667px; left: 1px;}
+.lightrope li:after {content: ""; top: -14px;left: 9px; position: absolute; width: 52px; height: 18.66667px; border-bottom: solid #222 2px; border-radius: 50%; }
+.lightrope li:last-child:after {content: none;}
+.lightrope li:first-child {margin-left: -40px;}
 @-webkit-keyframes flash-1 {
-  0%, 100% {
-    background: #04bf20;
-    box-shadow: 0px 4.66667px 24px 3px #04bf20;
-  }
-  50% {
-    background: rgba(4, 191, 32, 0.4);
-    box-shadow: 0px 4.66667px 24px 3px rgba(4, 191, 32, 0.2);
-  }
+  0%, 100% {background: #04bf20; box-shadow: 0px 4.66667px 24px 3px #04bf20;}
+  50% {background: rgba(4, 191, 32, 0.4); box-shadow: 0px 4.66667px 24px 3px rgba(4, 191, 32, 0.2);}
 }
-
 @keyframes flash-1 {
-  0%, 100% {
-    background: #04bf20;
-    box-shadow: 0px 4.66667px 24px 3px #04bf20;
-  }
-  50% {
-    background: rgba(4, 191, 32, 0.4);
-    box-shadow: 0px 4.66667px 24px 3px rgba(4, 191, 32, 0.2);
-  }
+  0%, 100% {background: #04bf20; box-shadow: 0px 4.66667px 24px 3px #04bf20;}
+  50% {background: rgba(4, 191, 32, 0.4); box-shadow: 0px 4.66667px 24px 3px rgba(4, 191, 32, 0.2);}
 }
-@-webkit-keyframes flash-3 {
-  0%, 100% {
-    background: #ff0d4c;
-    box-shadow: 0px 4.66667px 24px 3px #ff0d4c;
-  }
-  50% {
-    background: rgba(255, 13, 76, 0.4);
-    box-shadow: 0px 4.66667px 24px 3px rgba(255, 13, 76, 0.2);
-  }
+@-webkit-keyframes flash-2 {
+  0%, 100% {background: #ff0d4c; box-shadow: 0px 4.66667px 24px 3px #ff0d4c;}
+  50% {background: rgba(255, 13, 76, 0.4); box-shadow: 0px 4.66667px 24px 3px rgba(255, 13, 76, 0.2);}
 }
-@keyframes flash-3 {
-  0%, 100% {
-    background: #ff0d4c;
-    box-shadow: 0px 4.66667px 24px 3px #ff0d4c;
-  }
-  50% {
-    background: rgba(255, 13, 76, 0.4);
-    box-shadow: 0px 4.66667px 24px 3px rgba(255, 13, 76, 0.2);
-  }
+@keyframes flash-2 {
+  0%, 100% {background: #ff0d4c; box-shadow: 0px 4.66667px 24px 3px #ff0d4c;}
+  50% {background: rgba(255, 13, 76, 0.4); box-shadow: 0px 4.66667px 24px 3px rgba(255, 13, 76, 0.2);}
 }

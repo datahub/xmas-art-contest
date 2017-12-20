@@ -7,7 +7,7 @@ def main():
 	env = Environment(loader=FileSystemLoader('templates'))
 	image_template = env.get_template('gallery.html')
 	
-	images = glob("dist/media/*.JPG")
+	images = glob("dist/media/*.jpg")
 	image_list = []
 
 	for image in images:
@@ -27,7 +27,7 @@ def main():
 			orientation = 'portrait'
 
 		image_list.append({
-			"path": image,
+			"path": image.replace('dist/',''),
 			"desc": tags['ImageDescription'],
 			"artist": tags['Artist'],
 			"orientation": orientation
@@ -35,7 +35,7 @@ def main():
 
 	output = image_template.render(images=image_list)
 
-	with open("dist/index.html", "wb") as f:
+	with open("dist/2017-christmas-artwork.html", "wb") as f:
 		f.write(output)
 
 
